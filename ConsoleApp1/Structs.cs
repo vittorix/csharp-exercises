@@ -7,6 +7,7 @@ using Utilities;
 using System.Linq;
 
 // this struct is made readonly with the addition of readonly and init(). 
+// struct: in stack memory. immutable. they group together value data
 public readonly struct Coords {
     public Coords(double x, double y) {
         X = x; 

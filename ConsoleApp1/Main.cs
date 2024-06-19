@@ -7,7 +7,7 @@ using Utilities;
 
 public class Solution1 
 {   
-    public static void Main1(string[] args)
+    public static void Main(string[] args)
     {
         U.p("--------- MAIN ----------");
         // Searches.exec();        
@@ -21,6 +21,9 @@ public class Solution1
         // Lists.exec();
         // Delegates.exec();
         // Tuples.exec();
-        Threads.exec();
+        // Threads.exec();
+        // EnumSwitch.exec();
+        // ArraysLINQ.exec();
+        DeconstructorDog.exec();
     }
 }

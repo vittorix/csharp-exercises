@@ -7,6 +7,9 @@ namespace Utilities
             System.Console.WriteLine(toPrint);
         }
 
+        public static void p () {
+            System.Console.WriteLine();
+        }
 
         public static void p (String toPrint) {
             System.Console.WriteLine(toPrint);

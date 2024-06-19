@@ -23,5 +23,19 @@ public class Delegates
         U.p("---------");
         CallbackDelegate delegateCallBack2 = new CallbackDelegate(FunctionToCall);
         delegateCallBack2("Example delegate 2");
+
+        U.p("---------");
+
+        Action<string> actionExample1 = x => Console.WriteLine($"Action: {x}");
+        actionExample1("Encapsulates a method that has a single parameter and does not return a value");
+
+        Action<string, string> actionExample2 = (x, y) => Console.WriteLine($"Action: {x} {y}");
+        actionExample2("can have also", "2 methods");
+
+        Func<string, int> convertToInt = x => Convert.ToInt32(x);
+        Console.WriteLine($"The value is {convertToInt("1")}");
+
+        Func<int, int, int> sum = (x, y) => x + y;
+        Console.WriteLine($"The sum is {sum(1, 2)}");
     }
 }

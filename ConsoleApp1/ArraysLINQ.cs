@@ -1,0 +1,18 @@
+using Utilities;
+
+public class ArraysLINQ {
+    public static void exec(){
+        // Select is like map, Aggregate is like reduce:
+        var array = new int[] {1, 2, 3, 4};
+        U.p(array);
+
+        // multiplies the element * 10 then multiplies then multipliex each * 2 and sums them
+        // [10, 20, 30, 40] =>  20, 40, 60, 80 => 20 + 40 + 60 + 80 => 200
+        var result = array.Select(x => x * 10).Aggregate(0, (prev, cur) => prev + cur *2);
+        U.p(result);
+
+        // if we specify the seed, initial condition, it uses as firt in aggregate (result = 213)
+        result = array.Select(x => x * 10).Aggregate(13, (prev, cur) => prev + cur *2);
+        U.p(result);
+    }
+}
