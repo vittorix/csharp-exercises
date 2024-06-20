@@ -17,6 +17,7 @@ class DictionarySortedList
 {
     public static void exec()
     {
+        U.p("-------Dictionary");
         var dictionary = new Dictionary<int, string>() {{1, "c"}, {3, "a"}, {2, "b"}};
         U.p(dictionary);
         U.p("-------");
@@ -29,7 +30,7 @@ class DictionarySortedList
         var sortedByValue = dictionary.OrderBy(x => x.Value);
         U.p(sortedByValue);
 
-        U.p("-------");
+        U.p("-------SortedList");
         SortedList sList = new SortedList(){{2, "sono"}, {1, "io"}, {3, "Vix"}};
         U.pt(sList);
         string sentence ="";

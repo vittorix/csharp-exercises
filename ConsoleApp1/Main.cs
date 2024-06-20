@@ -27,6 +27,9 @@ public class Solution1
         // DeconstructorDog.exec();
         // LinkedLists.exec();
         // CompareAnimals.exec();
-        DictionarySortedList.exec();
+        // DictionarySortedList.exec();
+        // HashTableDate.exec();
+        // SortedDictionary.exec();
+        RandomNumbers.exec();
     }
 }
