@@ -1,4 +1,42 @@
-select hacker_id, name, score from hackers h, (select hacker_id from submissions) s where h.hacker_id = s.hacker_id and s.score > 0 order by s.score desc;
+select hacker_id, name, score from hackers h, (select hacker_id from submissions) s 
+  where h.hacker_id = s.hacker_id and s.score > 0 order by s.score desc;
+
+-- SELECT column_name(s) FROM table_name WHERE condition 
+-- GROUP BY column_name(s) HAVING condition ORDER BY column_name(s);
+
+select countrycode, count(countryCode) count from world.city where population > 1000000 
+  group by countryCode order by count desc;
+
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country 
+  HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
+SELECT SupplierName FROM Suppliers0 WHERE EXISTS 
+	(SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+SELECT ProductName FROM Products WHERE ProductID = ANY
+  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+SELECT ProductName FROM Products WHERE ProductID = ALL
+  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+select substring(name, 1, 3), name from world.city; -- selects the first 3 letters
+select substring(name, 3), name from world.city; -- selects from the 3rd letter to the end
+select replace(name, 'dam', 'xxx'), name from world.city;
+SELECT article, dealer, price FROM shop s1 
+	WHERE price=(SELECT MAX(s2.price) FROM shop s2 WHERE s1.article = s2.article) ORDER BY article;
+    
+SELECT @min_price:=MIN(price), @max_price:=MAX(price) FROM shop;
+SELECT * FROM shop WHERE price=@min_price OR price=@max_price;
+
+CREATE TABLE Orders (OrderID int NOT NULL, OrderNumber int NOT NULL, PersonID int,
+    PRIMARY KEY (OrderID), FOREIGN KEY (PersonID) REFERENCES Persons(PersonID));
+
+select rpad('Ciao', 10, 'XX'); -- CiaoXXXXXX
+select lower('CiaoVix'); -- ciaovix   see upper()
+-- LTRIM(str)	Remove leading spaces, RTRIM(str)
+-- REPLACE, REVERSE(s), RIGHT(str, lenn), SPACE(n)
+-- SUBSTRING(str,pos), SUBSTRING(str FROM pos), SUBSTRING(str,pos,len), SUBSTRING(str FROM pos FOR len)
+-- SUBSTRING('Quadratically', 5); 'ratically
+-- SUBSTRING('Quadratically', 5, 6); 'ratica'
+-- SUBSTRING('Sakila', -3); 'ila'
+-- SUBSTRING('Sakila', -5, 3); 'aki'
+-- SUBSTRING('Sakila' FROM -4 FOR 2); 'ki'
 
 drop table family;
 drop table children;
