@@ -18,7 +18,7 @@ public class Solution1
         // Structs.exec();
         // Interfaces.exec();
         // Arrays.exec();
-        Lists.exec();
+        // Lists.exec();
         // Delegates.exec();
         // Tuples.exec();
         // Threads.exec();
@@ -26,5 +26,6 @@ public class Solution1
         // ArraysLINQ.exec();
         // DeconstructorDog.exec();
         // LinkedLists.exec();
+        CompareAnimals.exec();
     }
 }

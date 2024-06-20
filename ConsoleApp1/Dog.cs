@@ -5,9 +5,14 @@ using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
 using System.Linq;
-public class Dog : IAnimal {
-    public string Name {get; set;}
+
+public class Animal: ComparerAnimal
+{
     public int Age {get; set;}
+}
+
+public class Dog : Animal, IAnimal {
+    public string Name {get; set;}
     public string Voice => "WUFF";
     public Dog(string name, int age = 0) {
         Name = name;
@@ -26,6 +31,10 @@ public class Dog : IAnimal {
         U.p($"Wooffing {message} loudly.");
     }
     public void introduceSelf() {
-        U.p($"Hi I'm {Name}, I'm a {this.GetType()}, I'm {Age}yo and this is my voice: {Voice}");
+        U.p(ToString());
+    }
+
+    public override string ToString(){
+        return $"Hi I'm {Name}, I'm a {this.GetType()}, I'm {Age}yo and this is my voice: {Voice}";
     }
 }

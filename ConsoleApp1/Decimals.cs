@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-class PlusMinus
+class Decimals
 {
 
     /*
@@ -33,9 +33,13 @@ class PlusMinus
                 ratioPositive++;
             else ratioZero++;
         });
-        // .ToString("0.000###") 
+        // .ToString("0.000###") this prints only 3 to 6 digits depending if trailer zeros
+        // ToString("0.000000") this prints 6 digits always, even trailer zeros
         // 0 means hide the zero
         // # means show the zero
+        // 0.500000
+        // 0.333333
+        // 0.166667
         System.Console.WriteLine((ratioPositive/arr.Count).ToString("0.000000"));
         System.Console.WriteLine((ratioNegative/arr.Count).ToString("0.000000"));
         System.Console.WriteLine((ratioZero/arr.Count).ToString("0.000000"));
@@ -45,13 +49,13 @@ class PlusMinus
 
 class SolutionPlusMinus
 {
-    public static void MainPlusMinus(string[] args)
+    public static void MainDecimals(string[] args)
     {
         // int n = Convert.ToInt32(Console.ReadLine().Trim());
 
         // List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
         List<int> arr =[1, 32, -1, -1, 2, 0];
 
-        PlusMinus.plusMinus(arr);
+        Decimals.plusMinus(arr);
     }
 }
