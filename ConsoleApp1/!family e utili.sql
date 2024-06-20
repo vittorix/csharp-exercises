@@ -49,7 +49,7 @@ SELECT COUNT(DISTINCT name) FROM children;
 -- SELECT MIN(price) FROM products; or MAX
 -- SELECT SUM(quantity) FROM order_details;
 -- SELECT AVG(price)::NUMERIC(10,2) FROM products;
--- SELECT product_name || unit AS product FROM products; Concatenates the values
+-- SELECT CONCAT(first_name, ' ', last_name) AS Name FROM test.student -- Concatenates the values
 
 -- SELECT COUNT(customer_id), country FROM customers GROUP BY country;
 -- SELECT COUNT(customer_id), country FROM customers GROUP BY country HAVING COUNT(customer_id) > 5;

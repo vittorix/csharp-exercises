@@ -13,7 +13,7 @@ public class Solution1
         // Searches.exec();        
         // StringReverse.exec();
         // StringLINQ.exec();
-        Strings.exec();
+        // Strings.exec();
         // Records.exec();
         // Structs.exec();
         // Interfaces.exec();
@@ -27,5 +27,6 @@ public class Solution1
         // DeconstructorDog.exec();
         // LinkedLists.exec();
         // CompareAnimals.exec();
+        DictionarySortedList.exec();
     }
 }
