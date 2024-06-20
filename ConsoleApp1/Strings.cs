@@ -72,10 +72,17 @@ public class Strings
         string[] words1 = text.Split(delimiterChars);
         U.p(words1);
 
-        U.p("-----");
+        U.p("-----Split");
         string[] delimiterStrings = { "<", ">", "[", "]", "x", "y", "z" };
         string[] words2 = text.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries); // need to specify these options
         U.p(words2);
+
+        string theString = "Some Very Large String Here";
+        U.p(theString);
+        var array = theString.Split(' ');
+        string rejoined = string.Join(" ", array);
+        U.p(rejoined);
+        string restOfArray = string.Join(" ", array.Skip(1)); // skip first element
 
         U.p("--------------------Replace");
         string source = "The mountains are behind the other mountains.";
