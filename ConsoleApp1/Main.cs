@@ -30,6 +30,8 @@ public class Solution1
         // DictionarySortedList.exec();
         // HashTableDate.exec();
         // SortedDictionary.exec();
-        RandomNumbers.exec();
+        // RandomNumbers.exec();
+        // LINQquery.exec();
+        MultiDimensionArray.exec();
     }
 }
