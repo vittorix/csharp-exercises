@@ -1,31 +1,28 @@
 select hacker_id, name, score from hackers h, (select hacker_id from submissions) s 
   where h.hacker_id = s.hacker_id and s.score > 0 order by s.score desc;
 
--- SELECT column_name(s) FROM table_name WHERE condition 
--- GROUP BY column_name(s) HAVING condition ORDER BY column_name(s);
-
 select countrycode, count(countryCode) count from world.city where population > 1000000 
-  group by countryCode order by count desc;
+group by countryCode having count > 10 order by count desc;
 
-SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country 
-  HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
-SELECT SupplierName FROM Suppliers0 WHERE EXISTS 
+SELECT SupplierName FROM Suppliers WHERE EXISTS 
 	(SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
-SELECT ProductName FROM Products WHERE ProductID = ANY
-  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
-SELECT ProductName FROM Products WHERE ProductID = ALL
-  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);
+SELECT ProductName FROM Products WHERE ProductID = ANY -- any returns true/false, selects multiple rows
+  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10); -- returns multiple records
+SELECT ProductName FROM Products WHERE ProductID = ALL --  used with SELECT, and WHERE or HAVING
+  (SELECT ProductID FROM OrderDetails WHERE Quantity = 10); -- returns multiple records
 select substring(name, 1, 3), name from world.city; -- selects the first 3 letters
 select substring(name, 3), name from world.city; -- selects from the 3rd letter to the end
 select replace(name, 'dam', 'xxx'), name from world.city;
-SELECT article, dealer, price FROM shop s1 
+SELECT article, dealer, price FROM shop s1 -- For each article, find dealer(s) w most expensive price
 	WHERE price=(SELECT MAX(s2.price) FROM shop s2 WHERE s1.article = s2.article) ORDER BY article;
     
 SELECT @min_price:=MIN(price), @max_price:=MAX(price) FROM shop;
 SELECT * FROM shop WHERE price=@min_price OR price=@max_price;
 
-CREATE TABLE Orders (OrderID int NOT NULL, OrderNumber int NOT NULL, PersonID int,
-    PRIMARY KEY (OrderID), FOREIGN KEY (PersonID) REFERENCES Persons(PersonID));
+drop table orders; drop table persons;
+create table persons (name varchar (20), personid int PRIMARY KEY not null);
+CREATE TABLE Orders (OrderID int NOT NULL, OrderNumber int NOT NULL, 
+	PersonID int PRIMARY KEY, FOREIGN KEY (PersonID) REFERENCES Persons(PersonID));
 
 select rpad('Ciao', 10, 'XX'); -- CiaoXXXXXX
 select lower('CiaoVix'); -- ciaovix   see upper()
@@ -38,15 +35,13 @@ select lower('CiaoVix'); -- ciaovix   see upper()
 -- SUBSTRING('Sakila', -5, 3); 'aki'
 -- SUBSTRING('Sakila' FROM -4 FOR 2); 'ki'
 
-drop table family;
-drop table children;
-drop table schools;
+drop table if exists family; drop table if exists children; drop table if exists schools;
 
 create table children (
   id int not null primary key,
   name varchar(10) not null,
-  age int,
-  birth date,
+  age int  not null,
+  birth date not null,
   school_id int
 );
 
@@ -58,20 +53,23 @@ CREATE TABLE FAMILY (
 );
 
 create table schools (
-	id serial not null,
+	id int AUTO_INCREMENT primary key ,
 	name varchar(20)
 );
 
-insert into children values (1, 'fia', 8, '2013-07-01', 1), (2, 'alex', 12, '04/30/2018', 2);
+insert into children values (1, 'fia', 8, '2015-07-05', 1);
+delete from children where id = 1;
+delete from children;
+insert into children values (1, 'fia', 8, '2015-07-05', 1), (2, 'alex', 12, '2012-09-22', 2);
 insert into family values (1, 'vix', 50, 1);
 insert into family values (2, 'mom', 45, 1);
-delete from family where dad_name = 'mom';
+-- delete from family where dad_name = 'mom';
 update children set name='Sofia' where id =1 ;
 alter table children add fav_color varchar(15);
-alter table children alter column name type varchar(15);
+alter table children modify name varchar(15); -- change column type
 update children set fav_color='red' where name='alex';
 update children set fav_color='pink' where name='Sofia';
-insert into schools values (1, 'prairie'), (2, 'liberty');
+insert into schools(name) values ('prairie'), ('liberty');
 
 select * from children where name like 'S%';
 -- ilike      case sensitive
@@ -83,6 +81,14 @@ select * from children where name like 'S%';
 
 select * from family;
 SELECT COUNT(DISTINCT name) FROM children;
+
+-- SELECT DATE("2017-06-15");
+-- SELECT DATE("2017-06-15 09:34:21");
+-- The DATE type is used for values with a date part but no time part. MySQL retrieves and displays DATE values in 'YYYY-MM-DD' format. The supported range is '1000-01-01' to '9999-12-31'.
+-- The DATETIME type is used for values that contain both date and time parts. MySQL retrieves and displays DATETIME values in 'YYYY-MM-DD hh:mm:ss' format. The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'.
+-- The TIMESTAMP data type is used for values that contain both date and time parts. TIMESTAMP has a range of '1970-01-01 00:00:01' UTC to '2038-01-19 03:14:07' UTC.
+
+
 -- SELECT * FROM customers LIMIT 20 OFFSET 40; -- 20 rows starting from 41st;
 -- SELECT MIN(price) FROM products; or MAX
 -- SELECT SUM(quantity) FROM order_details;
