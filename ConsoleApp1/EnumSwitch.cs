@@ -20,8 +20,8 @@ public class EnumSwitch {
 
         Person person2 = new();
         switch (person2){
-            case <Person.Child: U.p("p2: 0-1");    break;
-            case >Person.Adult: U.p("p2: 18-100");    break;
+            case < Person.Child: U.p("p2: 0-1");    break;
+            case > Person.Adult: U.p("p2: 18-100");    break;
             default: U.p("p2: I don't know age");    break;
         }
 

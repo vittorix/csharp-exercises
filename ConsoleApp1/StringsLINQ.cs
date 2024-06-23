@@ -9,13 +9,13 @@ public class StringLINQ
 {    
     public static void exec()
     {
-       U.p("------Split select todictionary");
+       U.ps("Split select todictionary");
         var str2 = "key1:value1;key2:value2;key3:value3";
         var dict = str2.Split(';').Select(s => s.Split(':')).ToDictionary(key => key[0], value => value[1]);
         U.p(str2);
         U.p(dict);
 
-        U.p("------Aggregate");
+        U.ps("Aggregate");
         string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
         // gets the longest fruit name. in this case we don't need to pass an initial value (seed)
         // Return the final result as an upper case string.

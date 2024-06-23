@@ -3,6 +3,10 @@ using System.Collections;
 namespace Utilities
 {
     public static class U {
+        public static string newId () {
+            return Guid.NewGuid().ToString();
+        }
+
         public static void p (Object toPrint) {
             System.Console.WriteLine(toPrint);
         }
@@ -11,19 +15,28 @@ namespace Utilities
             System.Console.WriteLine();
         }
 
-        public static void p (String toPrint) {
-            System.Console.WriteLine(toPrint);
+        public static void p (string toPrint) {
+            Console.WriteLine(toPrint);
         }
 
-        public static void p (IEnumerable toPrint, string separator = "\n") {
+        public static void p (IEnumerable toPrint, string separator = "\n", string title = "") {
+            if(!string.IsNullOrEmpty(title)) 
+                Console.Write(title);
             foreach(var element in toPrint) 
                 Console.Write(element + separator);
             if(separator!="\n")
                 Console.WriteLine();
         }
 
-        public static void pt (IEnumerable toPrint) {
-            p(toPrint, "\t");
+        public static void ps(string message = "") {
+            if(string.IsNullOrWhiteSpace(message))
+                p("--------");
+            else 
+                p($"-------- {message} --------");
+        }
+
+        public static void pt (IEnumerable toPrint, string title = "") {
+            p(toPrint, "\t", title);
         }
 
         // list.Reverse();
@@ -67,5 +80,6 @@ namespace Utilities
             else 
                 return -1;
         }
+        public static int sum (IEnumerable<int> values) => values.Sum();
     }
 }

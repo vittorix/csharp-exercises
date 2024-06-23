@@ -5,7 +5,7 @@
 
    public int CompareTo(Object o )
    {
-      Employee e = o as Employee;
+      Employee e = o as Employee; // same as: e =  (Employee) o;
       if (e == null)
          throw new ArgumentException("o is not an Employee object.");
       return Name.CompareTo(e.Name);

@@ -9,29 +9,33 @@ public class Solution1
 {   
     public static void Main(string[] args)
     {
-        U.p("--------- MAIN ----------");
-        // Searches.exec();        
-        // StringReverse.exec();
-        // StringLINQ.exec();
-        // Strings.exec();
-        // Records.exec();
-        // Structs.exec();
-        // Interfaces.exec();
+        U.p("========= MAIN =========");
         // Arrays.exec();
-        // Lists.exec();
-        // Delegates.exec();
-        // Tuples.exec();
-        // Threads.exec();
-        // EnumSwitch.exec();
         // ArraysLINQ.exec();
-        // DeconstructorDog.exec();
-        // LinkedLists.exec();
+        CollectionExpressions.exec();
         // CompareAnimals.exec();
+        // DeconstructorDog.exec();
+        // Delegates.exec();
         // DictionarySortedList.exec();
+        // EnumSwitch.exec();
+        EnumerableMethods.exec();
         // HashTableDate.exec();
-        // SortedDictionary.exec();
-        // RandomNumbers.exec();
+        // Interfaces.exec();
+        // LinkedLists.exec();
         // LINQquery.exec();
-        MultiDimensionArray.exec();
+        // Lists.exec();
+        // MultiDimensionArray.exec();
+        // RandomNumbers.exec();
+        // Records.exec();
+        // Searches.exec();        
+        // SortedDictionary.exec();
+        // Strings.exec();
+        // StringLINQ.exec();
+        // StringReverse.exec();
+        // Structs.exec();
+        // Threads.exec();
+        // Tuples.exec();
+        // Vari.exec();
+
     }
 }

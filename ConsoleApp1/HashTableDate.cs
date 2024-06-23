@@ -12,14 +12,16 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 using Utilities;
+using System.Collections.ObjectModel;
 
 class HashTableDate
 {
     public static void exec()
     {
+        // DEPRECATED!!! USE DICTIONARY
         // collection of key/value pairs organized on the hashcode of the key
         // if sorted, use SortedDictionary
-        U.p("-------HashTable");
+        U.ps("HashTable DEPRECATED!!! USE DICTIONARY");
         Hashtable table = new Hashtable();
         table.Add(1, 2);
         table.Add("new DateTime()", new DateTime());           // 1/1/0001 12:00:00 AM
@@ -27,5 +29,15 @@ class HashTableDate
         table.Add("new DateTime().Second", new DateTime().Second); // 0
         table.Add("DateTime.Now", DateTime.Now);               // 6/20/2024 2:30:16 PM
         U.p(table);
+
+        Hashtable table2 = new Hashtable() {{U.newId(), "hello"}, {U.newId(), 234},
+                 {U.newId(), 230.45}, {U.newId(), null}};
+        U.ps();
+        foreach(DictionaryEntry entry in table2) 
+            U.p($"entry: {entry} \t key: {entry.Key} \t value: {entry.Value}");
+        U.ps();
+        foreach(string key in table2.Keys) 
+            U.p($"key: {key} \t value: {table2[key]}");
+        U.ps();       
     }
 }

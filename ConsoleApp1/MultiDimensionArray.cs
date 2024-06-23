@@ -8,7 +8,7 @@ public class MultiDimensionArray {
 
         int[,,] arr3D = new int[4, 2, 3]; // 4 x 2 x 3 = 24 elements
         U.p("4 x 2 X 3 arr3D has rank (dimension): " + arr3D.Rank + " length: " + arr3D.Length);
-        U.p("---------");
+        U.ps();
 
         // 4 rows 2 columns
         int[,] array2D =  { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
@@ -24,7 +24,8 @@ public class MultiDimensionArray {
         foreach (int element in array2D){
             System.Console.Write($"{element}  ");
         }
-        U.p("\n---------");
+
+        U.ps();
 
         U.p("array2D:");
         int numRows = array2D.GetLength(0);
@@ -36,7 +37,7 @@ public class MultiDimensionArray {
             }
             System.Console.WriteLine();
         }
-        U.p("---------");
+        U.ps();
 
         int[,,] array3D = new int[,,] { { { 1, 2, 3 }, { 4,   5,  6 } },
                                         { { 7, 8, 9 }, { 10, 11, 12 } } };
@@ -50,7 +51,7 @@ public class MultiDimensionArray {
         // Output:
         // 8
         // 12
-        U.p("-----3D array----");
+        U.ps("3D array");
 
 
         for (int x = 0; x < numXs; x++) {
@@ -74,7 +75,7 @@ public class MultiDimensionArray {
         // Output:
         // 12 equals 12
 
-        U.p("----- jagged arrays");
+        U.ps("jagged arrays");
         int[][] jaggedArray = new int[3][];
         jaggedArray[0] = [1, 3, 5, 7, 9];
         jaggedArray[1] = [0, 2, 4, 6];

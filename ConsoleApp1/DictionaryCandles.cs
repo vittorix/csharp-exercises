@@ -26,21 +26,23 @@ class DictionaryCandles
     public static int birthdayCakeCandles(List<int> candles)
     {
         Dictionary<int, int> dictionary = new System.Collections.Generic.Dictionary<int, int>();
-            int max=0;
-        if(candles.Count>0)
-            max=candles[0]; 
+        
+        int max = 0;
+        if(candles.Count > 0)
+            max = candles[0]; 
+
         candles.ForEach(n => {
             try{
                 dictionary[n] = dictionary[n] + 1;
                 if(dictionary[n] > dictionary[max]) 
-                    max=n;
+                    max = n;
             }
             catch(Exception e) {
                 dictionary[n] = 1;
             }
             U.p(n + " " + dictionary[n]);
         });
-        U.p("-------");
+        U.ps();
         U.p(dictionary);
        return dictionary[max];
     }

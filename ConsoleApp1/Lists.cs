@@ -9,7 +9,7 @@ public class Lists
 {    
     public static void exec()
     {
-        U.p("----Reverse----");
+        U.ps("Reverse");
         List<int> list = [1,2,3,4,5,6];
         U.pt(list);
         List<int> reversed = U.reverse(list);
@@ -17,23 +17,18 @@ public class Lists
         reversed.Reverse();
         U.pt(reversed);
 
-        U.p("----ForEach---");
-        List<string> list1 = new List<string>() { "geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"}; 
-        list.ForEach(a => {
-            Console.Write("\t");
-            Console.Write(a);
-        });
-        U.p();
+        U.ps("ForEach");
+        list.ForEach(a => Console.Write("\t" + a));
 
-        list.ForEach(s => U.p("s=" + s));
-
-        U.p("----First, Last, direct access---");
+        U.ps("First, Last, direct access---");
+        // List<string> list1 = new List<string>() { "geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"}; 
+        List<string> list1 = ["geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"]; 
         U.pt(list1);
         U.p("first: " + list1.First());
         U.p("last: " + list1.Last());
         U.p("second: " + list1[1]);
         
-        U.p("----removal---");
+        U.ps("removal---");
         // also: RemoveAll(T) and RemoveAt(index) and RemoveRange(Int32, Int32)
         Console.WriteLine();
         list1.Remove("Geek123"); 
@@ -41,20 +36,25 @@ public class Lists
         list1.Add("Geek123");
         U.pt(list1);
 
-        U.p("----Copy, AddRange, initialization, Clear---");
-        // init list with values from other list
-        List<string> list2 = new List<string>(list1);
-        // copy list to another
-        List<string> list3 = list1.ToList();
-        // add elements from list into another
-        list3.AddRange(list2);
+        U.ps("Copy, , initialization, AddRange, Clear---");
         // copy list to array
         string[] array = new string[list1.Count];
         list1.CopyTo(array);
+        // copy list to another
+        List<string> list3 = [.. list1]; // collection expression 
+        list3 = list1.ToList();
+
+        // init list with values from other list
+        List<string> list2 = new List<string>(list1);
+        
+        // add elements from list into another
+        list3.AddRange(list2);
 
         list3.Clear();
+        Console.Write("Cleard list: ");
+        U.pt(list3);
 
-        U.p("------Sort & reverse sort-----");
+        U.ps("Sort & reverse sort");
         list2.Sort();
         U.pt(list2);
         list2.Sort((a, b) => a.CompareTo(b)); // doesn't do any sorting
@@ -63,7 +63,7 @@ public class Lists
         U.pt(list2);
 
         // to be fixed
-        // U.p("-----Sort numerically (by length, then alphabetically)");
+        // U.ps("Sort numerically (by length, then alphabetically)");
         // List<string> orderNumerically = ["aaaaaaaaa", "31a", "a", "1",  "5", "0", "AA11", "09837640983743981374"];
         // // orderNumerically.OrderBy(x => r.Next()); // scramble the list
         // // Random r = new Random();
@@ -73,16 +73,16 @@ public class Lists
         // // orderNumerically.OrderBy(a => a.Length).ThenBy(a => a).ToList();
         // // U.pt(orderNumerically);
 
-        U.p("----binary search----");
+        U.ps("binary search");
         List<string> list4 = list1.ToList();
         U.pt(list4);
         U.p("5 found at position: " + list4.BinarySearch("5"));
         
-        U.p("----convertAll----");
+        U.ps("convertAll");
         List<long> longs = list.ConvertAll(i => (long) i);       
         U.pt(longs);
 
-        U.p("----Exists, Contains, Find----");
+        U.ps("Exists, Contains, Find");
         U.p("4L exists in the list: " + longs.Exists(x => x == 4L));
         U.p("list contains 4L: " + longs.Contains(4L));
         U.p("found element: " + longs.Find(x => x == 4L));
@@ -92,12 +92,12 @@ public class Lists
         U.p("found all occurrences of element 4L:");
         U.p(occurrences);
 
-        U.p("----Insert----");
+        U.ps("Insert");
         longs.Insert(0, 32L); // insert at beginning
         List<long> longs1 = longs.Prepend(-1000L).Append(1000L).ToList(); // create new list with 2 new elements
         U.pt(longs1);
 
-        U.p("----AddRange, InsertRange, FindIndex----");
+        U.ps("AddRange, InsertRange, FindIndex");
         var employees = new List<Employee>();
         employees.AddRange(new Employee[] { new Employee { Name = "Frank", Id = 2 },
                                             new Employee { Name = "Jill", Id = 3 },

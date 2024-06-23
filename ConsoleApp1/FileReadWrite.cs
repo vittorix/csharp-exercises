@@ -7,14 +7,14 @@ public class FileReadWrite
     {
         string fileName = "vixfile.txt";
         FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Read);
-        StreamReader sr = new StreamReader( fs );
+        StreamReader sr = new StreamReader(fs);
         string fileContent = sr.ReadToEnd();
-        if( string.IsNullOrEmpty(fileContent) )
+        if (string.IsNullOrEmpty(fileContent))
         {
             fs.Close();
             fs = new FileStream( fileName, FileMode.OpenOrCreate, FileAccess.Write );
-            StreamWriter sw = new StreamWriter( fs );
-            sw.Write( "This is the file content." );
+            StreamWriter sw = new StreamWriter(fs);
+            sw.Write("This is the file content.");
             sw.Close();
             Console.WriteLine("I've written in file: " + fileName );
         }

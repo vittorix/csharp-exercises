@@ -20,12 +20,11 @@ public class Delegates
         DoWork((result) => Console.WriteLine(result));
         DoWork(Console.WriteLine); // This also works
 
-        U.p("---------");
+        U.ps();
         CallbackDelegate delegateCallBack2 = new CallbackDelegate(FunctionToCall);
         delegateCallBack2("Example delegate 2");
 
-        U.p("---------");
-
+        U.ps();
         Action<string> actionExample1 = x => Console.WriteLine($"Action: {x}");
         actionExample1("Encapsulates a method that has a single parameter and does not return a value");
 

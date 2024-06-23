@@ -35,8 +35,8 @@ class Decimals
         });
         // .ToString("0.000###") this prints only 3 to 6 digits depending if trailer zeros
         // ToString("0.000000") this prints 6 digits always, even trailer zeros
-        // 0 means hide the zero
-        // # means show the zero
+        // 0 means show the trailing zero(s)
+        // # means hide the trailing zero(s)
         // 0.500000
         // 0.333333
         // 0.166667

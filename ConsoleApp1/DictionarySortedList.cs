@@ -17,21 +17,22 @@ class DictionarySortedList
 {
     public static void exec()
     {
-        U.p("-------Dictionary");
+        U.ps("Dictionary");
         var dictionary = new Dictionary<int, string>() {{1, "c"}, {3, "a"}, {2, "b"}};
         U.p(dictionary);
-        U.p("-------");
+        U.ps();
         var sortedDictionary = dictionary.OrderBy(x => x.Key);
         U.p(sortedDictionary);
-        U.p("-------");
+        U.ps();
         var reversedDictionary = dictionary.OrderByDescending(x => x.Key);
         U.p(reversedDictionary);
-        U.p("-------");
+        U.ps();
         var sortedByValue = dictionary.OrderBy(x => x.Value);
         U.p(sortedByValue);
 
-        U.p("-------SortedList");
+        U.ps("SortedList");
         SortedList sList = new SortedList(){{2, "sono"}, {1, "io"}, {3, "Vix"}};
+        U.pt(sList);
         U.pt(sList);
         string sentence ="";
         foreach (string s in sList.Values) {

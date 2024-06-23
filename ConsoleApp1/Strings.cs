@@ -38,7 +38,7 @@ public class Strings
         U.p(s1.ToList());
         U.p(s1.ToList().GetType());
 
-        U.p("--------------empty strings");
+        U.ps("empty strings");
         string str = "hello";
         string? nullStr = null;
         string emptyStr = String.Empty;
@@ -57,7 +57,7 @@ public class Strings
         sb.Append('!');
         U.p(sb.ToString()); //Cat: the ideal pet!
 
-        U.p("-------Split");
+        U.ps("Split");
         // the spaces make empty strings
         string phrase = "first   second  third.";
         string[] words = phrase.Split(' ');
@@ -72,26 +72,26 @@ public class Strings
         string[] words1 = text.Split(delimiterChars);
         U.p(words1);
 
-        U.p("-----Split");
+        U.ps("Split and Join");
         string[] delimiterStrings = { "<", ">", "[", "]", "x", "y", "z" };
         string[] words2 = text.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries); // need to specify these options
         U.p(words2);
 
-        string theString = "Some Very Large String Here";
+        string theString = "String to be split to array and rejoined";
         U.p(theString);
         var array = theString.Split(' ');
         string rejoined = string.Join(" ", array);
         U.p(rejoined);
-        string restOfArray = string.Join(" ", array.Skip(1)); // skip first element
+        string restOfArray = string.Join("_", array.Skip(1)); // skip first element, join with underscore
 
-        U.p("--------------------Replace");
+        U.ps("Replace");
         string source = "The mountains are behind the other mountains.";
         var replacement = source.Replace("mountains", "peaks");
         U.p(replacement);
         replacement = source.Replace(' ', '_');
         U.p(replacement);
         
-        U.p("--------------------Remove");
+        U.ps("Remove");
         // Remove one substring from the middle of the string.
         string source1 = "Many mountains are behind many clouds today.";
         int numberOfCharsToRemove = "many ".Length;
@@ -99,7 +99,7 @@ public class Strings
         Console.WriteLine(source1);
         Console.WriteLine(result);
 
-        U.p("--------------------Regex");
+        U.ps("Regex");
         // this code is strange, does 2 different things for the and many
         // Replace "the" or "The" with "many" or "Many".
         string source2 = "The mountains are still there behind the clouds today.";
@@ -124,7 +124,7 @@ public class Strings
             }
         }
 
-        U.p("---------------ToCharArray");
+        U.ps("ToCharArray");
         string phrase1 = "The quick brown fox jumps over the fence";
         Console.WriteLine(phrase1);
         char[] chars = phrase1.ToCharArray();
@@ -135,7 +135,7 @@ public class Strings
         string updatedPhrase = new string(chars);
         U.p(updatedPhrase);
 
-        U.p("----------- String comparison");
+        U.ps("String comparison");
         string root = @"C:\users";
         string root2 = @"C:\Users";
         bool result1 = root.Equals(root2);
