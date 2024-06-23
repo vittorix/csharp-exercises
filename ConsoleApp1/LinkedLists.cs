@@ -9,6 +9,8 @@ public class LinkedLists
 {    
     public static void exec()
     {
+        U.pst("LinkedLists");
+
         LinkedList<int> linkedList = [];
         linkedList.AddFirst(1);
         linkedList.Append(4);

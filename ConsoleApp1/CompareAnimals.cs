@@ -13,6 +13,7 @@ public class ComparerAnimal : Comparer<Animal>
 public class CompareAnimals {
 
   public static void exec(){
+    U.pst("CompareAnimals");
     Animal lassie = new Dog("Lassie", 4); 
     Animal cassie = new Dog("Cassie", 5);
     Animal sassie = new Dog("Sassie", 2);

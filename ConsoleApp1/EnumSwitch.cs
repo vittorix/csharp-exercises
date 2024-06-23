@@ -12,6 +12,8 @@ public class EnumSwitch {
     }
 
     public static void exec (){
+        U.pst("EnumSwitch");
+
         Person person1 = Person.Adult;
         switch (person1){
             case Person.Newborn: U.p("0-1");    break;

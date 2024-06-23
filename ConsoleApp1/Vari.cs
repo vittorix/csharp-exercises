@@ -7,7 +7,7 @@ using Utilities;
 public class Vari
 {    
 	public static void exec() {
-        U.ps("Vari");
+        U.pst("Vari");
         U.p("10 % 3: " + 10 % 3);
         U.p("137 % 30: " + 137 % 30);
     }

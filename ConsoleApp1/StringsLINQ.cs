@@ -9,6 +9,8 @@ public class StringLINQ
 {    
     public static void exec()
     {
+        U.pst("StringLINQ");
+
        U.ps("Split select todictionary");
         var str2 = "key1:value1;key2:value2;key3:value3";
         var dict = str2.Split(';').Select(s => s.Split(':')).ToDictionary(key => key[0], value => value[1]);

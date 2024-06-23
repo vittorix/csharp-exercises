@@ -2,7 +2,9 @@ using Utilities;
 
 public class DeconstructorDog {
 
-  public static void exec(){
+  public static void exec() {
+    U.pst("DeconstructorDog");
+    
     var cassie = new Dog("Cassie", 5);
     cassie.introduceSelf();
     var (name, age, voice) = cassie; // uses the deconstructor

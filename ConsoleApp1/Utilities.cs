@@ -34,6 +34,12 @@ namespace Utilities
             else 
                 p($"-------- {message} --------");
         }
+        public static void pst(string message = "") {
+            if(string.IsNullOrWhiteSpace(message))
+                p("=========");
+            else 
+                p($"========= {message} =========");
+        }
 
         public static void pt (IEnumerable toPrint, string title = "") {
             p(toPrint, "\t", title);

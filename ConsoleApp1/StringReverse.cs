@@ -8,6 +8,8 @@ public class StringReverse
 {    
     public static void exec()
     {
+        U.pst("StringReverse");
+
         string s = "12345678";
         U.p(s);
         string reversed = U.reverse(s);

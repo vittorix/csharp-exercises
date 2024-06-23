@@ -15,7 +15,7 @@ public class CollectionExpressions
                 
     public static void exec()
     {
-        U.ps("collection expression");
+        U.pst("collection expressions");
         int[] nums = [1, 2, 3, 4]; // [1, 2, 3, 4] is a collection expression
         U.p("sum first 4 numbers: " + U.sum(nums));
 

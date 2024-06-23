@@ -17,6 +17,8 @@ public class Delegates
 	}
 
 	public static void exec() {
+        U.pst("Delegates");
+
         DoWork((result) => Console.WriteLine(result));
         DoWork(Console.WriteLine); // This also works
 

@@ -3,6 +3,8 @@ using Utilities;
 
 public class MultiDimensionArray {
     public static void exec(){
+        U.ps("MultiDimensionArray");
+
         int[,] arr2D = new int[4, 2]; // 4 rows x 2 columns = 8 elements
         U.p("4 x 2 arr2D has rank (dimension): " + arr2D.Rank + " length: " + arr2D.Length);
 

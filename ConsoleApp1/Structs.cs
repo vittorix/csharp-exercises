@@ -26,6 +26,7 @@ public readonly struct Coords {
 public class Structs 
 {    
     public static void exec() {
+        U.pst("Structs");
         Coords coords = new Coords(10, 12);
         U.p(coords);
     }

@@ -19,7 +19,7 @@ class SortedDictionary
     {
         // collection of key/value pairs sorted on the key
         // use HashTable if unsorted
-        U.ps("SortedDictionary");
+        U.pst("SortedDictionary");
         SortedDictionary<string, int> sortedDictionary = new SortedDictionary<string, int>();
         sortedDictionary.Add("Element C", 200);
         sortedDictionary.Add("Element A", 200);

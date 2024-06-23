@@ -9,6 +9,7 @@ public class Strings
 {    
     public static void exec()
     {
+        U.pst("Strings");
         // see https://learn.microsoft.com/en-us/dotnet/csharp/how-to/
         //  https://learn.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings
 
@@ -33,10 +34,10 @@ public class Strings
         U.p(s1.IndexOf("c"));
 
         U.p(s1.ToUpper());
-        U.p(s1.ToArray());
-        U.p(s1.ToArray().GetType());
-        U.p(s1.ToList());
-        U.p(s1.ToList().GetType());
+        U.pt(s1.ToArray());
+        U.p(s1.ToArray().GetType()); // Char
+        U.pt(s1.ToList());
+        U.p(s1.ToList().GetType()); // List
 
         U.ps("empty strings");
         string str = "hello";
@@ -70,12 +71,12 @@ public class Strings
         string text = "one\ttwo three;:four,five six xsevenyeight[nine]ten";
         char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
         string[] words1 = text.Split(delimiterChars);
-        U.p(words1);
+        U.pt(words1);
 
         U.ps("Split and Join");
         string[] delimiterStrings = { "<", ">", "[", "]", "x", "y", "z" };
         string[] words2 = text.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries); // need to specify these options
-        U.p(words2);
+        U.pt(words2);
 
         string theString = "String to be split to array and rejoined";
         U.p(theString);

@@ -16,6 +16,8 @@ public class Threads
     }
     public static void exec()
     {
+        U.pst("Threads");
+
         Thread t = new Thread(Worker);
         t.Start();
 

@@ -17,7 +17,7 @@ class DictionarySortedList
 {
     public static void exec()
     {
-        U.ps("Dictionary");
+        U.pst("DictionarySortedList");
         var dictionary = new Dictionary<int, string>() {{1, "c"}, {3, "a"}, {2, "b"}};
         U.p(dictionary);
         U.ps();

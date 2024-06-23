@@ -8,6 +8,7 @@ using System.Linq;
 public class Arrays 
 {    
     public static void exec() {
+        U.pst("Arrays");
         int[] ints = [1, 2, 3, 4, 5, 6];
         object[] objs = ["10", "20", 30, 40, 50];
         U.pt(ints);

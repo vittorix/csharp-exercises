@@ -22,9 +22,13 @@ public class Element
 
 public class LINQquery {
     public static void exec() {
+        U.pst("LINQquery");
+
         U.p("Enter a bunch of space separated integers");
-        List<int> numbers = Console.ReadLine().TrimEnd().Split(' ').ToList()
-            .Select(stringsTemp => Convert.ToInt32(stringsTemp)).ToList();
+        // commented to do dotnet run > output.txt
+        // List<int> numbers = Console.ReadLine().TrimEnd().Split(' ').ToList()
+        //     .Select(stringsTemp => Convert.ToInt32(stringsTemp)).ToList();
+                List<int> numbers = [4, 67, 76, 93, 0, 5]; 
         U.pt(numbers, "you entered: ");
         U.ps();
 

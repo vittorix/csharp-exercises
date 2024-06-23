@@ -7,6 +7,8 @@ using Utilities;
 public class Tuples
 {    
 	public static void exec() {
+        U.pst("Tuples");
+
         var t2 = Tuple.Create("Vix", 5); 
         U.p("t2.Item1: " + t2.Item1); 
         // max 8 elements in a Tuple

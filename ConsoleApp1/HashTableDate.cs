@@ -18,6 +18,8 @@ class HashTableDate
 {
     public static void exec()
     {
+        U.pst("HashTableDate");
+        
         // DEPRECATED!!! USE DICTIONARY
         // collection of key/value pairs organized on the hashcode of the key
         // if sorted, use SortedDictionary

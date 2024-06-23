@@ -2,6 +2,7 @@ using Utilities;
 
 public class ArraysLINQ {
     public static void exec(){
+        U.pst("ArraysLINQ");
         // Select is like map, Aggregate is like reduce:
         var array = new int[] {1, 2, 3, 4};
         U.pt(array);

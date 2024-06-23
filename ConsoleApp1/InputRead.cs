@@ -8,6 +8,8 @@ public class InputRead
 {    
     public void exec(string[] args)
     {
+        U.pst("InputRead");
+
         // reads a line from input and converts it into a list of strings
         List<int> strings = Console.ReadLine().TrimEnd().Split(' ').ToList()
             .Select(stringsTemp => Convert.ToInt32(stringsTemp)).ToList();

@@ -12,6 +12,8 @@ public class Records
 
     public static void exec()
     {
+        U.pst("Records");
+
         Person vix = new Person("Vix", 53, true);
         U.p(vix);
         Person vix1 = new Person("Vix", 53, true);

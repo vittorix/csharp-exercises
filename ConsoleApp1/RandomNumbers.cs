@@ -17,7 +17,7 @@ class RandomNumbers
 {
     public static void exec()
     {
-        U.ps("Random");
+        U.pst("RandomNumbers");
         List<int> list = [];
         int n = 100;
         int min = 45;
