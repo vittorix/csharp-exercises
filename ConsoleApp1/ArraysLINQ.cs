@@ -22,5 +22,9 @@ public class ArraysLINQ {
         result = array.Select(x => x * 10).Aggregate(13, (prev, cur) => prev + cur *2);
         U.p(result);
         U.ps();
+
+        // multiplication needs seed = 1
+        int[] numbers = { 4, 7, 10 };
+        U.p(numbers.Aggregate(1, (prev, next) => prev * next)); // 280
     }
 }

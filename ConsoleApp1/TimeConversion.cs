@@ -29,6 +29,7 @@ class TimeConversion
         DateTime dateTime = DateTime.ParseExact(s, "hh:mm:sstt", 
         System.Globalization.CultureInfo.InvariantCulture);
         return dateTime.ToString("HH:mm:ss");
+        // 19:05:45
     }
 
 }

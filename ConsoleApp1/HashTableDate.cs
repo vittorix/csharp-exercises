@@ -30,6 +30,10 @@ class HashTableDate
         table.Add("new DateTime().Date", new DateTime().Date); // 1/1/0001 12:00:00 AM
         table.Add("new DateTime().Second", new DateTime().Second); // 0
         table.Add("DateTime.Now", DateTime.Now);               // 6/20/2024 2:30:16 PM
+
+        DateTime dt = new(2021, 12, 31, 18, 30, 0);
+        table.Add("dt.ToString(\"d\"): ",  dt.ToString("d"));  // 12/31/2021
+        table.Add("dt.ToString(\"F\"): ",  dt.ToString("F"));  // Friday, December 31, 2021 6:30:00 PM
         U.p(table);
 
         Hashtable table2 = new Hashtable() {{U.newId(), "hello"}, {U.newId(), 234},

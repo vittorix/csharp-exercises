@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
 using System.Linq;
+using System.ComponentModel;
 public class Strings 
 {    
     public static void exec()
@@ -52,6 +53,19 @@ public class Strings
         Console.WriteLine(newStr.Length); // 0
         //Console.WriteLine(nullStr.Length); //raises a NullReferenceException.
 
+        U.ps("coalescing operator ?? and ??=");
+        // The null-coalescing operator ?? returns the value of its left-hand operand if it isn't null; 
+        // otherwise, it evaluates the right-hand operand and returns its result. 
+        // (numbers ??= new List<int>()).Add(5);
+        int? a = null;
+        int b = a ?? 5; // notice that b is not nullable
+        U.p("b: " + b); // 5
+        int? c = a ??= 10; // int c = a == null ? 10 : a;
+        U.p("c: " + c); // 10
+        a ??= 3;
+        U.p("a: " + a); // 3
+        
+        U.ps("StringBuilder");
         System.Text.StringBuilder sb = new System.Text.StringBuilder("Rat: the ideal pet");
         sb[0] = 'C';
         U.p(sb); //Cat: the ideal pet
@@ -84,6 +98,22 @@ public class Strings
         string rejoined = string.Join(" ", array);
         U.p(rejoined);
         string restOfArray = string.Join("_", array.Skip(1)); // skip first element, join with underscore
+
+        U.ps("Concat, Join, Concat Where, Join Where");
+        string concatenated = string.Concat(words1);
+        U.p("concats without separator: " + concatenated);
+        int[] numbers = [1, 2, 3, 4, 5];
+        concatenated = string.Concat(numbers.Select(n => n.ToString()));
+        U.p("concats numbers without separator: " + concatenated);
+        string joined = string.Join('_', numbers);
+        U.p("joins numbers with _ separator: " + joined);
+        joined = string.Join(", ", numbers.Where(x => x < 4));
+        U.p("conditional joining numbers < 4: " + joined);
+
+        string[] input = ["apple", "banana", "cherry"];
+        joined = string.Concat(input.Select((x, i) => x.ToUpper() + (i < input.Length - 1 ? ", " : ".")));
+        // APPLE, BANANA, CHERRY.
+        U.p("join array of strings to a string and put . at the end: " + joined);
 
         U.ps("Replace");
         string source = "The mountains are behind the other mountains.";

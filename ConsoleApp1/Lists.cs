@@ -42,7 +42,7 @@ public class Lists
         string[] array = new string[list1.Count];
         list1.CopyTo(array);
         // copy list to another
-        List<string> list3 = [.. list1]; // collection expression 
+        List<string> list3 = [.. list1]; // .. spread operator 
         list3 = list1.ToList();
 
         // init list with values from other list
