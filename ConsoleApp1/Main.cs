@@ -12,13 +12,13 @@ public class Solution1
         U.p("========= MAIN =========");
         // Arrays.exec();
         // ArraysLINQ.exec();
-        CollectionExpressions.exec();
+        // CollectionExpressions.exec();
         // CompareAnimals.exec();
         // DeconstructorDog.exec();
         // Delegates.exec();
         // DictionarySortedList.exec();
         // EnumSwitch.exec();
-        EnumerableMethods.exec();
+        // EnumerableLINQ.exec();
         // HashTableDate.exec();
         // Interfaces.exec();
         // LinkedLists.exec();
