@@ -28,6 +28,19 @@ namespace Utilities
                 Console.WriteLine();
         }
 
+        // print list of lists
+        public static void pll(List<List<int>> list, string message = "")
+        {
+            if(!string.IsNullOrWhiteSpace(message))
+                p(message);
+            for (int x = 0; x < list.Count; x++) {
+                for (int y = 0; y < list[x].Count; y++) {
+                    Console.Write($"[{x}, {y}] {list[x][y]}\t");
+                }
+                Console.WriteLine();
+            }
+        }
+        
         public static void ps(string message = "") {
             if(string.IsNullOrWhiteSpace(message))
                 p("--------");

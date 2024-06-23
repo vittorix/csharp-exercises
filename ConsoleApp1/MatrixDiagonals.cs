@@ -24,35 +24,38 @@ class MatrixDiagonals
      * The function accepts 2D_INTEGER_ARRAY arr as parameter.
      */
 
-    public static int diagonalDifference(List<List<int>> arr){
-        arr = new List<List<int>> {
+    // se also MultidimensionArray.cs
+    public static int diagonalDifference(List<List<int>> list){
+        list = new List<List<int>> {
             new List<int>{1,2,3}, 
             new List<int>{1,2,3}, 
             new List<int>{1,2,3}
         };
-         arr[0][0] = 11;
-        arr[0][1] = 2;
-        arr[0][2] = 4;
-        arr[1][0] = 4;
-        arr[1][1] = 5;
-        arr[1][2] = 6;
-        arr[2][0] = 10;
-        arr[2][1] = 8;
-        arr[2][2] = -12;
+         list[0][0] = 11;
+        list[0][1] = 2;
+        list[0][2] = 4;
+        list[1][0] = 4;
+        list[1][1] = 5;
+        list[1][2] = 6;
+        list[2][0] = 10;
+        list[2][1] = 8;
+        list[2][2] = -12;
+
+        U.pll(list, "list:");
 
         int diag1 =0;
         int diag2 =0;
-        U.p(arr.Count);
-        for(int i=0; i<arr.Count ;i++)
-            for(int j=0; j < arr.Count; j++){
+        U.p(list.Count);
+        for(int i=0; i<list.Count ;i++)
+            for(int j=0; j < list.Count; j++){
                 U.p(i + " " + j);
                 if(i==j) {
-                    U.p("   " + i + " " + j + " <1>" + arr[i][j]);
-                    diag1 += arr[i][j];
+                    U.p("   " + i + " " + j + " <1>" + list[i][j]);
+                    diag1 += list[i][j];
                 }
-                if(i+j == arr.Count - 1) {
-                    U.p("   " + i + " " + j + " <2>" + arr[i][j]);
-                    diag2 += arr[i][j];
+                if(i+j == list.Count - 1) {
+                    U.p("   " + i + " " + j + " <2>" + list[i][j]);
+                    diag2 += list[i][j];
                 }
             }
         return Math.Abs(diag1 - diag2);

@@ -21,7 +21,8 @@ public class StringLINQ
         string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
         // gets the longest fruit name. in this case we don't need to pass an initial value (seed)
         // Return the final result as an upper case string.
-        string longestName = fruits.Aggregate("", (current, next) => next.Length > current.Length ? next : current, fruit => fruit.ToUpper()); 
+        string longestName = fruits.Aggregate("", 
+            (current, next) => next.Length > current.Length ? next : current, fruit => fruit.ToUpper()); 
         Console.WriteLine("The fruit with the longest name is {0}.", longestName);     
    }
 }

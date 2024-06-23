@@ -20,6 +20,7 @@ public class Lists
 
         U.ps("ForEach");
         list.ForEach(a => Console.Write("\t" + a));
+        U.p();
 
         U.ps("First, Last, direct access---");
         // List<string> list1 = new List<string>() { "geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"}; 
@@ -37,7 +38,7 @@ public class Lists
         list1.Add("Geek123");
         U.pt(list1);
 
-        U.ps("Copy, , initialization, AddRange, Clear---");
+        U.ps("CopyTo, initialization, AddRange, Clear---");
         // copy list to array
         string[] array = new string[list1.Count];
         list1.CopyTo(array);
@@ -81,7 +82,12 @@ public class Lists
         
         U.ps("convertAll");
         List<long> longs = list.ConvertAll(i => (long) i);       
-        U.pt(longs);
+        U.pt(longs, "longs: ");
+
+        U.ps("conversion with Select and ToList");
+        longs = [];
+        longs = list.Select(n => (long) n).ToList();
+        U.pt(longs, "longs: ");
 
         U.ps("Exists, Contains, Find");
         U.p("4L exists in the list: " + longs.Exists(x => x == 4L));
@@ -98,8 +104,15 @@ public class Lists
         List<long> longs1 = longs.Prepend(-1000L).Append(1000L).ToList(); // create new list with 2 new elements
         U.pt(longs1);
 
-        U.ps("AddRange, InsertRange, FindIndex");
+        U.ps("InsertRange");
+        longs1.InsertRange(4, [121, 122, 123]);
+        U.pt(longs1);
+        U.p("Found 123L at index: " + longs1.FindIndex(3, 7, x => x == 123L));
+
+        U.ps("AddRange");
         var employees = new List<Employee>();
+        List<Employee> employees1 = [new Employee { Name = "Pippo", Id = 32 }, 
+            new Employee { Name = "Pluto", Id = 33 }];
         employees.AddRange(new Employee[] { new Employee { Name = "Frank", Id = 2 },
                                             new Employee { Name = "Jill", Id = 3 },
                                             new Employee { Name = "Dave", Id = 5 },
@@ -108,8 +121,13 @@ public class Lists
                                             new Employee { Name = "Robert", Id = 14 },
                                             new Employee { Name = "Adam", Id = 1 } } );
         employees.Sort();
-        U.pt(employees.Select(x => x.Name));
+        U.pt(employees.Select(x => x.Name), "employees: ");
 
+        employees.AddRange(employees1);
+        employees.Sort();
+        U.pt(employees.Select(x => x.Name), "employees + employees1: ");
+
+        U.ps("FindIndex");
         var es = new EmployeeSearch("J");
         Console.WriteLine("'J' starts at index {0}",
                             employees.FindIndex(0, 6, es.StartsWith));
@@ -117,10 +135,6 @@ public class Lists
         es = new EmployeeSearch("Ju");
         Console.WriteLine("'Ju' starts at index {0}",
                             employees.FindIndex(0, employees.Count - 1, es.StartsWith));
-
-        longs1.InsertRange(4, [121, 122, 123]);
-        U.pt(longs1);
-        U.p("Found 123L at index: " + longs1.FindIndex(3, 7, x => x == 123L));
 
 
 

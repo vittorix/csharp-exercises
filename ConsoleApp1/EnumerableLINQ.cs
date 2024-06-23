@@ -53,6 +53,7 @@ public class EnumerableLINQ
         U.pt(together.Select(n => n % 2 ==0 ? n : Int32.MaxValue).Where(n => n < Int32.MaxValue), ".Select() even: ");
         U.pt(together.Select(n => n % 2 ==0), ".Select().Where() true if even: "); // true or false
         U.pt(together.Where(n => n % 2 ==0), ".Where() even: ");
+        U.pt(together.ToList().FindAll(n => n % 2 ==0), ".FindAll() even: ");
         
         U.ps("OfType, Cast");
         IEnumerable<int> ints = together.OfType<int>(); // return only the elements that can safely be cast to int

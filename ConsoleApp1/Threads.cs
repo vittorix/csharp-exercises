@@ -18,8 +18,8 @@ public class Threads
     {
         U.pst("Threads");
 
-        Thread t = new Thread(Worker);
-        t.Start();
+        Thread thread = new Thread(Worker);
+        thread.Start();
 
         for (int j = 0; j < 10; j++) {
             Console.WriteLine("Main. j: " + j);
@@ -27,7 +27,7 @@ public class Threads
         }
  
         // wait for the worker thread to complete
-        t.Join();
+        thread.Join();
         Console.WriteLine("Done");
     }
 }

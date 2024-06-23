@@ -11,6 +11,7 @@ using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Text;
 using System;
+using Utilities;
 
 class Triangle
 {
@@ -34,14 +35,9 @@ class Triangle
         }
     }
 
-}
-
-class SolutionTriangle
-{
-    public static void MainTriangle(string[] args)
-    {
+    public static void exec() {
+        U.ps("Triangle");
         // int n = Convert.ToInt32(Console.ReadLine().Trim());
-
         Triangle.staircase(6);
     }
 }

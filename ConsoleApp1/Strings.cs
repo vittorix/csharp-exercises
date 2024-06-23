@@ -20,6 +20,7 @@ public class Strings
 
         U.p("\n ---------------Interpolated String");
         var age = 50;
+        // jh is type: System.ValueTuple`4[System.String,System.String,System.Int32,System.Int32]
         var jh = (firstName: "Jupiter", lastName: "Hammon", born: 1711, published: 1761);
         Console.WriteLine($"{jh.firstName} {jh.lastName} was an African American poet born in {jh.born}.");
         Console.WriteLine($"at the age of {age}.");
@@ -76,8 +77,7 @@ public class Strings
         // the spaces make empty strings
         string phrase = "first   second  third.";
         string[] words = phrase.Split(' ');
-        foreach (var word in words)
-        {
+        foreach (var word in words) {
             U.p($"<{word}>");
         }
 
@@ -139,6 +139,7 @@ public class Strings
         // syntax: Regex.Replace(String, String, MatchEvaluator, RegexOptions) 
         source2 = System.Text.RegularExpressions.Regex.Replace(source2, "the\\s", ReplaceButKeepEventualCapitalization,
             System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        // The mountains are still there behind the clouds today.
         Console.WriteLine(source2);
 
         string ReplaceButKeepEventualCapitalization(System.Text.RegularExpressions.Match matchExpression)
@@ -164,7 +165,7 @@ public class Strings
         chars[index++] = 'a';
         chars[index] = 't';
         string updatedPhrase = new string(chars);
-        U.p(updatedPhrase);
+        U.p(updatedPhrase); // The quick brown cat jumps over the fence
 
         U.ps("String comparison");
         string root = @"C:\users";
