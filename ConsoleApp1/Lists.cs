@@ -6,12 +6,12 @@ using System.Numerics;
 using Utilities;
 
 public class Lists
-{    
+{
     public static void exec()
     {
         U.ps("Lists");
         U.ps("Reverse");
-        List<int> list = [1,2,3,4,5,6];
+        List<int> list = [1, 2, 3, 4, 5, 6];
         U.pt(list);
         List<int> reversed = U.reverse(list);
         U.pt(reversed);
@@ -24,16 +24,16 @@ public class Lists
 
         U.ps("First, Last, direct access---");
         // List<string> list1 = new List<string>() { "geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"}; 
-        List<string> list1 = ["geeks", "31", "a", "1",  "5", "Geek123", "GeeksforGeeks"]; 
+        List<string> list1 = ["geeks", "31", "a", "1", "5", "Geek123", "GeeksforGeeks"];
         U.pt(list1);
         U.p("first: " + list1.First());
         U.p("last: " + list1.Last());
         U.p("second: " + list1[1]);
-        
+
         U.ps("removal---");
         // also: RemoveAll(T) and RemoveAt(index) and RemoveRange(Int32, Int32)
         Console.WriteLine();
-        list1.Remove("Geek123"); 
+        list1.Remove("Geek123");
         U.pt(list1);
         list1.Add("Geek123");
         U.pt(list1);
@@ -48,7 +48,7 @@ public class Lists
 
         // init list with values from other list
         List<string> list2 = new List<string>(list1);
-        
+
         // add elements from list into another
         list3.AddRange(list2);
 
@@ -79,14 +79,14 @@ public class Lists
         List<string> list4 = list1.ToList();
         U.pt(list4);
         U.p("5 found at position: " + list4.BinarySearch("5"));
-        
+
         U.ps("convertAll");
-        List<long> longs = list.ConvertAll(i => (long) i);       
+        List<long> longs = list.ConvertAll(i => (long)i);
         U.pt(longs, "longs: ");
 
         U.ps("conversion with Select and ToList");
         longs = [];
-        longs = list.Select(n => (long) n).ToList();
+        longs = list.Select(n => (long)n).ToList();
         U.pt(longs, "longs: ");
 
         U.ps("Exists, Contains, Find");
@@ -111,7 +111,7 @@ public class Lists
 
         U.ps("AddRange");
         var employees = new List<Employee>();
-        List<Employee> employees1 = [new Employee { Name = "Pippo", Id = 32 }, 
+        List<Employee> employees1 = [new Employee { Name = "Pippo", Id = 32 },
             new Employee { Name = "Pluto", Id = 33 }];
         employees.AddRange(new Employee[] { new Employee { Name = "Frank", Id = 2 },
                                             new Employee { Name = "Jill", Id = 3 },
@@ -119,7 +119,7 @@ public class Lists
                                             new Employee { Name = "Jack", Id = 8 },
                                             new Employee { Name = "Judith", Id = 12 },
                                             new Employee { Name = "Robert", Id = 14 },
-                                            new Employee { Name = "Adam", Id = 1 } } );
+                                            new Employee { Name = "Adam", Id = 1 } });
         employees.Sort();
         U.pt(employees.Select(x => x.Name), "employees: ");
 
@@ -138,5 +138,5 @@ public class Lists
 
 
 
-   }
+    }
 }
