@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
 public class Delegates
-{    
-    public static void DoWork(Action<string> callback) {
+{
+    public static void DoWork(Action<string> callback)
+    {
         callback("Example delegate 1");
     }
 
     public delegate void CallbackDelegate(string message);
 
- 	public static void FunctionToCall(string message) {
+    public static void FunctionToCall(string message)
+    {
         Console.WriteLine(message);
-	}
+    }
 
-	public static void exec() {
+    public static void exec()
+    {
         U.pst("Delegates");
 
         DoWork((result) => Console.WriteLine(result));

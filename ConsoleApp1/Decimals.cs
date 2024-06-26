@@ -26,10 +26,11 @@ class Decimals
         decimal ratioPositive = 0m;
         decimal ratioNegative = 0m;
         decimal ratioZero = 0m;
-        arr.ForEach(n => {
-            if(n<0)
-                 ratioNegative++;
-            else if (n>0)
+        arr.ForEach(n =>
+        {
+            if (n < 0)
+                ratioNegative++;
+            else if (n > 0)
                 ratioPositive++;
             else ratioZero++;
         });
@@ -40,9 +41,9 @@ class Decimals
         // 0.500000
         // 0.333333
         // 0.166667
-        System.Console.WriteLine((ratioPositive/arr.Count).ToString("0.000000"));
-        System.Console.WriteLine((ratioNegative/arr.Count).ToString("0.000000"));
-        System.Console.WriteLine((ratioZero/arr.Count).ToString("0.000000"));
+        System.Console.WriteLine((ratioPositive / arr.Count).ToString("0.000000"));
+        System.Console.WriteLine((ratioNegative / arr.Count).ToString("0.000000"));
+        System.Console.WriteLine((ratioZero / arr.Count).ToString("0.000000"));
     }
 
 }
@@ -54,7 +55,7 @@ class SolutionPlusMinus
         // int n = Convert.ToInt32(Console.ReadLine().Trim());
 
         // List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
-        List<int> arr =[1, 32, -1, -1, 2, 0];
+        List<int> arr = [1, 32, -1, -1, 2, 0];
 
         Decimals.plusMinus(arr);
     }

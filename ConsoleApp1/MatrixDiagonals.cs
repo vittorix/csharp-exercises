@@ -16,7 +16,7 @@ using Utilities;
 class MatrixDiagonals
 {
 
-// Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+    // Given a square matrix, calculate the absolute difference between the sums of its diagonals.
     /*
      * Complete the 'diagonalDifference' function below.
      *
@@ -25,13 +25,14 @@ class MatrixDiagonals
      */
 
     // se also MultidimensionArray.cs
-    public static int diagonalDifference(List<List<int>> list){
+    public static int diagonalDifference(List<List<int>> list)
+    {
         list = new List<List<int>> {
-            new List<int>{1,2,3}, 
-            new List<int>{1,2,3}, 
+            new List<int>{1,2,3},
+            new List<int>{1,2,3},
             new List<int>{1,2,3}
         };
-         list[0][0] = 11;
+        list[0][0] = 11;
         list[0][1] = 2;
         list[0][2] = 4;
         list[1][0] = 4;
@@ -43,17 +44,20 @@ class MatrixDiagonals
 
         U.pll(list, "list:");
 
-        int diag1 =0;
-        int diag2 =0;
+        int diag1 = 0;
+        int diag2 = 0;
         U.p(list.Count);
-        for(int i=0; i<list.Count ;i++)
-            for(int j=0; j < list.Count; j++){
+        for (int i = 0; i < list.Count; i++)
+            for (int j = 0; j < list.Count; j++)
+            {
                 U.p(i + " " + j);
-                if(i==j) {
+                if (i == j)
+                {
                     U.p("   " + i + " " + j + " <1>" + list[i][j]);
                     diag1 += list[i][j];
                 }
-                if(i+j == list.Count - 1) {
+                if (i + j == list.Count - 1)
+                {
                     U.p("   " + i + " " + j + " <2>" + list[i][j]);
                     diag2 += list[i][j];
                 }

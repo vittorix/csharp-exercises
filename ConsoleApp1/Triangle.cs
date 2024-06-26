@@ -24,18 +24,22 @@ class Triangle
 
     public static void staircase(int n)
     {
-        for(int i=0;i<n;i++) {
-            for(int j=0;j<n-i-1;j++) {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n - i - 1; j++)
+            {
                 Console.Write(" ");
             }
-            for(int k=0;k<i+1;k++) {
+            for (int k = 0; k < i + 1; k++)
+            {
                 Console.Write("#");
             }
             Console.WriteLine();
         }
     }
 
-    public static void exec() {
+    public static void exec()
+    {
         U.ps("Triangle");
         // int n = Convert.ToInt32(Console.ReadLine().Trim());
         Triangle.staircase(6);

@@ -6,8 +6,8 @@ using System.Numerics;
 using Utilities;
 using System.Linq;
 using System.ComponentModel;
-public class Strings 
-{    
+public class Strings
+{
     public static void exec()
     {
         U.pst("Strings");
@@ -26,7 +26,7 @@ public class Strings
         Console.WriteLine($"at the age of {age}.");
         Console.WriteLine($"He'd be over {Math.Round((2018d - jh.born) / 100d) * 100d} years old today.");
 
-        var var1 = 123; 
+        var var1 = 123;
         var var2 = 234;
         Console.WriteLine("\n-----------Composite formatting: {0} {1}.", var1, var2);
 
@@ -65,7 +65,7 @@ public class Strings
         U.p("c: " + c); // 10
         a ??= 3;
         U.p("a: " + a); // 3
-        
+
         U.ps("StringBuilder");
         System.Text.StringBuilder sb = new System.Text.StringBuilder("Rat: the ideal pet");
         sb[0] = 'C';
@@ -77,7 +77,8 @@ public class Strings
         // the spaces make empty strings
         string phrase = "first   second  third.";
         string[] words = phrase.Split(' ');
-        foreach (var word in words) {
+        foreach (var word in words)
+        {
             U.p($"<{word}>");
         }
 
@@ -121,7 +122,7 @@ public class Strings
         U.p(replacement);
         replacement = source.Replace(' ', '_');
         U.p(replacement);
-        
+
         U.ps("Remove");
         // Remove one substring from the middle of the string.
         string source1 = "Many mountains are behind many clouds today.";
@@ -186,6 +187,6 @@ public class Strings
         lines.Sort(string.Compare); // or same: lines.Sort((left, right) => string.Compare(left, right));
         U.p("Sorted with Compare:");
         U.p(lines);
-        
-   }
+
+    }
 }

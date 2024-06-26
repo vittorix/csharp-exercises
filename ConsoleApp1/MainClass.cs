@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
 
-public class MainClass 
-{   
+public class MainClass
+{
     public static void Main(string[] args)
     {
         U.pst("MAIN");

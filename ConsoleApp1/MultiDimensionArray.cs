@@ -1,8 +1,10 @@
 using System.Runtime.CompilerServices;
 using Utilities;
 
-public class MultiDimensionArray {
-    public static void exec(){
+public class MultiDimensionArray
+{
+    public static void exec()
+    {
         U.ps("MultiDimensionArray");
 
         int[,] arr2D = new int[4, 2]; // 4 rows x 2 columns = 8 elements
@@ -13,7 +15,7 @@ public class MultiDimensionArray {
         U.ps();
 
         // 4 rows 2 columns
-        int[,] array2D =  { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+        int[,] array2D = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
         U.p(array2D[0, 0]); // 1
         U.p(array2D[0, 1]); // 2
         U.p(array2D[1, 0]); // 3
@@ -23,7 +25,8 @@ public class MultiDimensionArray {
         U.p("array2D has rank (dimension): " + arr2D.Rank + " length: " + arr2D.Length);
 
         U.p("array2D:");
-        foreach (int element in array2D){
+        foreach (int element in array2D)
+        {
             System.Console.Write($"{element}  ");
         }
 
@@ -33,8 +36,10 @@ public class MultiDimensionArray {
         int numRows = array2D.GetLength(0);
         int numColumns = array2D.GetLength(1);
         U.p("rows: " + numRows + " cols: " + numColumns);
-        for (int row = 0; row < numRows; row++) {
-            for (int col = 0; col < numColumns; col++) {
+        for (int row = 0; row < numRows; row++)
+        {
+            for (int col = 0; col < numColumns; col++)
+            {
                 System.Console.Write($"[{row},{col}] " + array2D[row, col] + "     ");
             }
             System.Console.WriteLine();
@@ -47,7 +52,7 @@ public class MultiDimensionArray {
         int numYs = array3D.GetLength(1);
         int numZs = array3D.GetLength(2);
 
-        U.p($"{numXs}x X {numYs}y X {numZs}z array3D has rank (dimension): " + arr3D.Rank + " length: " + arr3D.Length);                                        
+        U.p($"{numXs}x X {numYs}y X {numZs}z array3D has rank (dimension): " + arr3D.Rank + " length: " + arr3D.Length);
         U.p(array3D[1, 0, 1]);
         U.p(array3D[1, 1, 2]);
         // Output:
@@ -56,21 +61,25 @@ public class MultiDimensionArray {
         U.ps("3D array");
 
 
-        for (int x = 0; x < numXs; x++) {
-            for (int y = 0; y < numYs; y++) {
-                for (int z = 0; z < numZs; z++) {
+        for (int x = 0; x < numXs; x++)
+        {
+            for (int y = 0; y < numYs; y++)
+            {
+                for (int z = 0; z < numZs; z++)
+                {
                     System.Console.Write($"[{x}, {y}, {z}] {array3D[x, y, z]}\t");
                 }
                 System.Console.WriteLine();
             }
-                System.Console.WriteLine();
+            System.Console.WriteLine();
         }
 
 
 
         // Getting the total count of elements or the length of a given dimension.
         var total = 1;
-        for (int i = 0; i < array3D.Rank; i++) {
+        for (int i = 0; i < array3D.Rank; i++)
+        {
             total *= array3D.GetLength(i);
         }
         U.p($"{array3D.Length} equals {total}");
@@ -83,7 +92,7 @@ public class MultiDimensionArray {
         jaggedArray[1] = [0, 2, 4, 6];
         jaggedArray[2] = [11, 22];
 
-        int[][] jaggedArray2 = 
+        int[][] jaggedArray2 =
         [
             [1, 3, 5, 7, 9],
             [0, 2, 4, 6],
@@ -104,7 +113,7 @@ public class MultiDimensionArray {
         ];
 
         Console.WriteLine("jaggedArray3[0][1, 0]: " + jaggedArray3[0][1, 0]);
-        Console.WriteLine("jaggedArray3.Rank: " + jaggedArray3.Rank);    
-        Console.WriteLine("jaggedArray3.Length: " + jaggedArray3.Length);    
+        Console.WriteLine("jaggedArray3.Rank: " + jaggedArray3.Rank);
+        Console.WriteLine("jaggedArray3.Length: " + jaggedArray3.Length);
     }
 }

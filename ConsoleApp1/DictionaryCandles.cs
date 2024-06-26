@@ -26,25 +26,28 @@ class DictionaryCandles
     public static int birthdayCakeCandles(List<int> candles)
     {
         Dictionary<int, int> dictionary = new System.Collections.Generic.Dictionary<int, int>();
-        
-        int max = 0;
-        if(candles.Count > 0)
-            max = candles[0]; 
 
-        candles.ForEach(n => {
-            try{
+        int max = 0;
+        if (candles.Count > 0)
+            max = candles[0];
+
+        candles.ForEach(n =>
+        {
+            try
+            {
                 dictionary[n] = dictionary[n] + 1;
-                if(dictionary[n] > dictionary[max]) 
+                if (dictionary[n] > dictionary[max])
                     max = n;
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
                 dictionary[n] = 1;
             }
             U.p(n + " " + dictionary[n]);
         });
         U.ps();
         U.p(dictionary);
-       return dictionary[max];
+        return dictionary[max];
     }
 }
 
@@ -57,7 +60,7 @@ class SolutionBirthdayCakeCandles
         // int candlesCount = Convert.ToInt32(Console.ReadLine().Trim());
         // List<int> candles = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(candlesTemp => Convert.ToInt32(candlesTemp)).ToList();
 
-        List<int> candles= [18, 90, 90, 13, 90, 75, 90, 8, 90, 43];
+        List<int> candles = [18, 90, 90, 13, 90, 75, 90, 8, 90, 43];
         int result = DictionaryCandles.birthdayCakeCandles(candles);
         U.p(result);
 

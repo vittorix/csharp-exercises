@@ -24,7 +24,8 @@ class RandomNumbers
         int max = 75;
         Random random = new Random();
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             list.Add(random.Next(min, max + 1));
         }
         U.pt(list);

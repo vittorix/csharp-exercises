@@ -26,7 +26,7 @@ class TimeConversion
     // convers time to military time 24h
     public static string timeConversion(string s)
     {
-        DateTime dateTime = DateTime.ParseExact(s, "hh:mm:sstt", 
+        DateTime dateTime = DateTime.ParseExact(s, "hh:mm:sstt",
         System.Globalization.CultureInfo.InvariantCulture);
         return dateTime.ToString("HH:mm:ss");
         // 19:05:45

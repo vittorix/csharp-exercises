@@ -4,8 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
-public class StringReverse 
-{    
+public class StringReverse
+{
     public static void exec()
     {
         U.pst("StringReverse");
@@ -15,5 +15,5 @@ public class StringReverse
         string reversed = U.reverse(s);
         U.p("======");
         U.p(reversed);
-   }
+    }
 }

@@ -18,7 +18,7 @@ class DictionarySortedList
     public static void exec()
     {
         U.pst("DictionarySortedList");
-        var dictionary = new Dictionary<int, string>() {{1, "c"}, {3, "a"}, {2, "b"}};
+        var dictionary = new Dictionary<int, string>() { { 1, "c" }, { 3, "a" }, { 2, "b" } };
         U.p(dictionary);
         U.ps();
         var sortedDictionary = dictionary.OrderBy(x => x.Key);
@@ -31,11 +31,12 @@ class DictionarySortedList
         U.p(sortedByValue);
 
         U.ps("SortedList");
-        SortedList sList = new SortedList(){{2, "sono"}, {1, "io"}, {3, "Vix"}};
+        SortedList sList = new SortedList() { { 2, "sono" }, { 1, "io" }, { 3, "Vix" } };
         U.pt(sList);
         U.pt(sList);
-        string sentence ="";
-        foreach (string s in sList.Values) {
+        string sentence = "";
+        foreach (string s in sList.Values)
+        {
             sentence += s + " ";
         };
         U.p(sentence);

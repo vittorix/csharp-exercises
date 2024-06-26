@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Numerics;
 using Utilities;
 using System.Linq;
-public class Records 
-{    
-    int age{get; set;}
+public class Records
+{
+    int age { get; set; }
     public record Person(string name, int age, bool naughty);
 
     public static void exec()
@@ -23,7 +23,7 @@ public class Records
         Person fia = new Person("Fia", 5, false);
         U.p(fia);
         U.p(vix == fia);
-        Person Aex = fia with {name = "Axel", age = 9};
+        Person Aex = fia with { name = "Axel", age = 9 };
         U.p(Aex);
     }
 }

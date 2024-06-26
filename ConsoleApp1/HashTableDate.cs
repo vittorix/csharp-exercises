@@ -19,7 +19,7 @@ class HashTableDate
     public static void exec()
     {
         U.pst("HashTableDate");
-        
+
         // DEPRECATED!!! USE DICTIONARY
         // collection of key/value pairs organized on the hashcode of the key
         // if sorted, use SortedDictionary
@@ -32,18 +32,18 @@ class HashTableDate
         table.Add("DateTime.Now", DateTime.Now);               // 6/20/2024 2:30:16 PM
 
         DateTime dt = new(2021, 12, 31, 18, 30, 0);
-        table.Add("dt.ToString(\"d\"): ",  dt.ToString("d"));  // 12/31/2021
-        table.Add("dt.ToString(\"F\"): ",  dt.ToString("F"));  // Friday, December 31, 2021 6:30:00 PM
+        table.Add("dt.ToString(\"d\"): ", dt.ToString("d"));  // 12/31/2021
+        table.Add("dt.ToString(\"F\"): ", dt.ToString("F"));  // Friday, December 31, 2021 6:30:00 PM
         U.p(table);
 
         Hashtable table2 = new Hashtable() {{U.newId(), "hello"}, {U.newId(), 234},
                  {U.newId(), 230.45}, {U.newId(), null}};
         U.ps();
-        foreach(DictionaryEntry entry in table2) 
+        foreach (DictionaryEntry entry in table2)
             U.p($"entry: {entry} \t key: {entry.Key} \t value: {entry.Value}");
         U.ps();
-        foreach(string key in table2.Keys) 
+        foreach (string key in table2.Keys)
             U.p($"key: {key} \t value: {table2[key]}");
-        U.ps();       
+        U.ps();
     }
 }

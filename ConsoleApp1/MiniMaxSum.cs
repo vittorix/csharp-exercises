@@ -16,15 +16,15 @@ using Utilities;
 public class MiniMaxSum
 {
     public static void miniMaxSum(List<int> list)
-    {   
+    {
         long sum = 0;
         U.pt(list, "list: ");
         list.ForEach(n => sum += n); // find the sum of all numbers
         U.pt(list, "list.ForEach(n => sum += n): ");
-        
+
         list.Sort();
         U.pt(list, "sorted list: ");
-        
+
         long min = sum - list.Last(); // sum - greatest of the 5 = sum of the first 4 numbers
         long max = sum - list.First(); // sum - smallest of the 5 = sum of the last 4 numbers
         U.p("min: " + min + " max: " + max);
@@ -37,7 +37,7 @@ public class MiniMaxSum
         // as a single line of two space-separated long integers.
         // List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
         U.pst("miniMaxSum Hakerrank");
-        List<int> arr =     [3,5,9,1,7];
+        List<int> arr = [3, 5, 9, 1, 7];
         miniMaxSum(arr);
     }
 }

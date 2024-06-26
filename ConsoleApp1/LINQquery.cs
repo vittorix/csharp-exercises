@@ -20,15 +20,17 @@ public class Element
     public required int AtomicNumber { get; init; }
 }
 
-public class LINQquery {
-    public static void exec() {
+public class LINQquery
+{
+    public static void exec()
+    {
         U.pst("LINQquery");
 
         U.p("Enter a bunch of space separated integers");
         // commented to do dotnet run > output.txt
         // List<int> numbers = Console.ReadLine().TrimEnd().Split(' ').ToList()
         //     .Select(stringsTemp => Convert.ToInt32(stringsTemp)).ToList();
-                List<int> numbers = [4, 67, 76, 93, 0, 5]; 
+        List<int> numbers = [4, 67, 76, 93, 0, 5];
         U.pt(numbers, "you entered: ");
         U.ps();
 
@@ -38,19 +40,19 @@ public class LINQquery {
             { new(){ Symbol="Sc", Name="Scandium", AtomicNumber=21}},
             { new(){ Symbol="Ti", Name="Titanium", AtomicNumber=22}}
         };
-    
+
         // System.Linq.IOrderedEnumerable<Element> subset = from theElement in elements
         var subset = from theElement in elements
-                    where theElement.AtomicNumber < 22
-                    orderby theElement.Name
-                    select theElement;
+                     where theElement.AtomicNumber < 22
+                     orderby theElement.Name
+                     select theElement;
 
         //  Calcium 20
         //  Potassium 19
         //  Scandium 21
         foreach (Element theElement in subset)
             Console.WriteLine(theElement.Name + " " + theElement.AtomicNumber);
-        
+
         U.ps();
         string[] fourStrings = ["a", "b", "c"];
         int[] tenNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
